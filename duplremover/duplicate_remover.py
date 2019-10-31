@@ -201,10 +201,8 @@ class DuplRm(object):
             duplicated_found = True
             if self.AUTO_DELETE:
                 new_list.append(ps.pop(-1))
-                dump = [os.remove(x) for x in ps]
-                del dump
-                self.RM_COUNT += len(ps)
-                self._printer('auto deleted: \n{}\n'.format('\n'.join(ps)))
+                sl = self._files_remover(ps, return_count=False, return_lis=True)
+                self._printer('auto deleted: \n{}\n'.format('\n'.join(sl)))
             elif not self.AUTO_DELETE and self.INTERACTIVE_MODE:
                 self._note_printer(ps, top_note='Duplicate files detected', end_note='end')
                 ip_str = 'Choose the options you need to keep(input like "0" or "0,1"; empty to keep all): '
@@ -216,10 +214,8 @@ class DuplRm(object):
                     self._note_printer(rm_lis, top_note=tn, fill_str='~', disordered_mode=True)
                     confirm = input(' >>> please confirm(yes?): ')
                     if confirm.strip().lower() == 'yes' or confirm.strip().lower() == 'y':
-                        dump = [os.remove(x) for x in rm_lis]
-                        del dump
-                        self.RM_COUNT += len(rm_lis)
-                        self._printer('files has been delete')
+                        sc_str = self._files_remover(rm_lis)
+                        self._printer('  {} files has been delete'.format(sc_str))
                     else:
                         self._printer('cancel deletion')
             else:
@@ -227,6 +223,28 @@ class DuplRm(object):
                 return ps
         if not duplicated_found:
             self._printer('No duplicates found in this type')
+
+    def _files_remover(self, f_lis, return_count=True, return_lis=False):
+        success_count = 0
+        success_lis = []
+        for f in f_lis:
+            try:
+                os.remove(f)
+                self.RM_COUNT += 1
+                success_count += 1
+                success_lis.append(f)
+            except PermissionError:
+                self._printer('Permission Error! can not delete "{}"'.format(f))
+                continue
+        count_str = "{}/{}".format(success_count, len(f_lis))
+        if return_count and not return_lis:
+            return count_str
+        elif return_count and return_lis:
+            return count_str, success_lis
+        elif not return_count and return_lis:
+            return success_lis
+        else:
+            pass
 
     def _get_file_sample(self, f_path, n=20, return_type='list'):
         lis = []
@@ -332,9 +350,10 @@ class DuplRm(object):
 
 
 if __name__ == '__main__':
-    DC = DuplRm(directory='E:\\test\\',
+    DC = DuplRm(directory='I:\\Photos\\',
                 interactive_mode=False,
                 auto_delete=True,
+                # types=['PDF', 'pdf']
                 # remove_zero_size_file=True,
                 # remove_empty_dirs=True
                 )
