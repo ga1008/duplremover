@@ -250,7 +250,11 @@ class DuplRm(object):
         lis = []
         s = os.path.getsize(f_path)
         if s > 0:
-            rf = open(f_path, 'rb')
+            try:
+                rf = open(f_path, 'rb')
+            except PermissionError:
+                self._printer('Permission Error! can not read file: {}'.format(f_path))
+                return
             if 0 < s <= 100 or not self.SAMPLE_MATCH:
                 dump = [lis.append(x) for x in rf.read()]
                 del dump
@@ -350,12 +354,12 @@ class DuplRm(object):
 
 
 if __name__ == '__main__':
-    DC = DuplRm(directory='I:\\Photos\\',
+    DC = DuplRm(directory='I:\\电影\\Others\\',
                 interactive_mode=False,
                 auto_delete=True,
                 # types=['PDF', 'pdf']
-                # remove_zero_size_file=True,
-                # remove_empty_dirs=True
+                remove_zero_size_file=True,
+                remove_empty_dirs=True
                 )
     res = DC.start()
     # print("return result: ")
