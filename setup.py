@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="duplremover",
-    version="0.0.2",
+    version="0.0.3",
     author="GuardianAngel",
     author_email="zhling2012@live.com",
     description="remove any duplicated files",

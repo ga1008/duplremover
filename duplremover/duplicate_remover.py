@@ -7,7 +7,7 @@ from collections import Counter
 from multiprocessing import cpu_count, Lock
 from multiprocessing.pool import Pool
 
-from set_logger import set_logger
+from duplremover.set_logger import set_logger
 
 
 class DuplRm(object):
@@ -354,9 +354,9 @@ class DuplRm(object):
 
 
 if __name__ == '__main__':
-    DC = DuplRm(directory='I:\\电影\\Others\\',
-                interactive_mode=False,
-                auto_delete=True,
+    DC = DuplRm(directory='D:\\test\\',
+                interactive_mode=True,
+                auto_delete=False,
                 # types=['PDF', 'pdf']
                 remove_zero_size_file=True,
                 remove_empty_dirs=True
