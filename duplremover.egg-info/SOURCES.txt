@@ -2,12 +2,18 @@ README.md
 setup.py
 duplremover/__init__.py
 duplremover/duplicate_remover.py
+<<<<<<< HEAD
 duplremover/resourse_and_gears.py
+=======
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
 duplremover/set_logger.py
 duplremover.egg-info/PKG-INFO
 duplremover.egg-info/SOURCES.txt
 duplremover.egg-info/dependency_links.txt
+<<<<<<< HEAD
 duplremover.egg-info/entry_points.txt
 duplremover.egg-info/not-zip-safe
 duplremover.egg-info/requires.txt
+=======
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
 duplremover.egg-info/top_level.txt

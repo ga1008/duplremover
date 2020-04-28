@@ -1,5 +1,6 @@
 Metadata-Version: 2.1
 Name: duplremover
+<<<<<<< HEAD
 Version: 0.0.4
 Summary: a tool to remove any duplicated files
 Home-page: https://github.com/GuardianGH/duplremover/tree/master/duplremover
@@ -7,6 +8,13 @@ Author: Guardian
 Author-email: zhling2012@live.com
 Maintainer: Guardian
 Maintainer-email: zhling2012@live.com
+=======
+Version: 0.0.3
+Summary: remove any duplicated files
+Home-page: https://github.com/GuardianGH/duplremover/tree/master/duplremover
+Author: GuardianAngel
+Author-email: zhling2012@live.com
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
 License: UNKNOWN
 Description: 【天使去重】可以做什么？
         =======================
@@ -40,11 +48,14 @@ Description: 【天使去重】可以做什么？
         怎么使用
         =========
         
+<<<<<<< HEAD
         ### 控制台直接使用：
         ```shell script
         $ remover
         ```
         
+=======
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         导入并实例化：
         ```python
         from duplremover.duplicate_remover import DuplRm
@@ -83,9 +94,14 @@ Description: 【天使去重】可以做什么？
         为了更好的说明效果，我弄了一些测试用的文件（环境是windows，当然linux下也是不成问题的）。
         文件夹结构如下，有一些jpg，mp3，mp4和ini文件，有些是重复的，有些重复文件在子文件夹sub下面：
         
+<<<<<<< HEAD
         ![1xsadO.jpg](https://s2.ax1x.com/2020/02/15/1xsadO.jpg)
         
         ![1xsdoD.jpg](https://s2.ax1x.com/2020/02/15/1xsdoD.jpg)
+=======
+        ![Markdown](http://i2.tiimg.com/702641/a989ce5c7d9cebba.jpg)
+        ![Markdown](http://i2.tiimg.com/702641/6ae55047fbf9d3ca.jpg)
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         
         
         以交互模式下实例化并传入文件夹路径：
@@ -97,32 +113,49 @@ Description: 【天使去重】可以做什么？
         ```
         
         输出如下图：
+<<<<<<< HEAD
         ![1xsMoF.jpg](https://s2.ax1x.com/2020/02/15/1xsMoF.jpg)
+=======
+        ![Markdown](http://i2.tiimg.com/702641/59e98b647b2e0ec7.jpg)
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         
         程序成功检查出文件夹内的文件类型和对应的数目，这时候你可以冒号后面输入想要去重的文件类型的编号，例如“0”，或者多种类型，用任意符号分割：“0,2,3”，
         直接回车，或者输入其他字符（包括不在选项内的数字，例如“5”），将跳过手动选择，自动选择全部的文件类型。
         
         接下来我要检查全部的文件的重复情况，下图是直接按下回车键的效果：
+<<<<<<< HEAD
         
         ![1xs1JJ.jpg](https://s2.ax1x.com/2020/02/15/1xs1JJ.jpg)
+=======
+        ![Markdown](http://i2.tiimg.com/702641/9215a609f9a0c6dd.jpg)
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         
         可以看见程序开始执行去重检查，先检查了ini文件类型，并且发现了重复的文件，一个位于test文件夹下，另一个位于其子文件夹sub下，
         接下来可以选择需要保留的文件，"0" 或者 "0,1"，逻辑与上一步一样，留空则保留所有文件。注意如果一旦输入了要保留的文件编号，未被选中的将会被删除
         
         输入“1”按下回车：
+<<<<<<< HEAD
         
         ![1xsuZT.jpg](https://s2.ax1x.com/2020/02/15/1xsuZT.jpg)
+=======
+        ![Markdown](http://i2.tiimg.com/702641/08ad8babbdfb378f.jpg)
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         
         程序提示是否确认删除，输入“yes”或者“y”，文件会立马被删除，其他任意字符则或直接回车则跳过
         
         输入“y”并按下回车：
+<<<<<<< HEAD
         
         ![1xs3W9.jpg](https://s2.ax1x.com/2020/02/15/1xs3W9.jpg)
+=======
+        ![Markdown](http://i2.tiimg.com/702641/c914ef6a300b2c35.jpg)
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         程序提示文件已经被成功删除掉了，并且立即进入下一个重复文件检测循环，发现ini文件只有这两个重复，则自动进入下一个类型的判断中（JPG类型）。
         
         后面的操作都大同小异，只是确认输入的编号是正确的就行。
         
         最后处理完成，程序会提示总共删除的文件个数：
+<<<<<<< HEAD
         
         ![1xsmLV.jpg](https://s2.ax1x.com/2020/02/15/1xsmLV.jpg)
         
@@ -134,6 +167,16 @@ Description: 【天使去重】可以做什么？
         非交互模式下，auto_delete设置为False的输出效果如下：
         
         ![1xstL6.jpg](https://s2.ax1x.com/2020/02/15/1xstL6.jpg)
+=======
+        ![Markdown](http://i2.tiimg.com/702641/319215728fbe3e1b.jpg)
+        
+        
+        如果在交互模式下，auto_delete参数也设置为True的话，除了在开始类型选择时有提示输入检测类型之外，后面的删除都是自动完成，将不会给输入的选项：
+        ![Markdown](http://i2.tiimg.com/702641/dc54ac1f9f0fdd0d.jpg)
+        
+        非交互模式下，auto_delete设置为False的输出效果如下：
+        ![Markdown](http://i1.fuimg.com/702641/7df61b7ec840ef7b.jpg)
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         
         此前如果你用一个变量接收调用start方法返回的数据的话，你会发现它是一个字典（如果不是这个模式，返回的使个None值），包含了检测到的重复文件的类型和路径，例如：
         ```python
@@ -150,12 +193,19 @@ Description: 【天使去重】可以做什么？
         ```
         
         最后一种模式，非交互模式下启用自动删除，仅建议在非重要数据或者自动程序调用时使用，输出效果如下：
+<<<<<<< HEAD
         
         ![1xsUeK.jpg](https://s2.ax1x.com/2020/02/15/1xsUeK.jpg)
         
         最后再啰嗦一下，数据高无价，操作需谨慎！（删错了重要文件别找我╮（╯＿╰）╭，争取下个版本增加恢复功能）
         ====
         
+=======
+        ![Markdown](http://i1.fuimg.com/702641/ce82d7e172b471f6.jpg)
+        
+        最后再啰嗦一下，数据高无价，操作需谨慎！（删错了重要文件别找我╮（╯＿╰）╭，争取下个版本增加恢复功能）
+        ===="# duplremover" 
+>>>>>>> 4399852a93f8cd650d79f280615437d05027d689
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
