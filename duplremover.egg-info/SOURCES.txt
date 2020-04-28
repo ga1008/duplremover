@@ -1,0 +1,13 @@
+README.md
+setup.py
+duplremover/__init__.py
+duplremover/duplicate_remover.py
+duplremover/resourse_and_gears.py
+duplremover/set_logger.py
+duplremover.egg-info/PKG-INFO
+duplremover.egg-info/SOURCES.txt
+duplremover.egg-info/dependency_links.txt
+duplremover.egg-info/entry_points.txt
+duplremover.egg-info/not-zip-safe
+duplremover.egg-info/requires.txt
+duplremover.egg-info/top_level.txt

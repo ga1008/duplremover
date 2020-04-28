@@ -1,0 +1,3 @@
+[console_scripts]
+remover = duplremover.duplicate_remover:rmduplicate
+
